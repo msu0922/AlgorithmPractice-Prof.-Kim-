@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/minsewoong/Desktop/세웅이네집/건국대학교/2024 1학기/알고리즘연습 (김성렬)/week1",
+      "program": "/Users/minsewoong/Desktop/세웅이네집/건국대학교/2024 1학기/알고리즘연습 (김성렬)/week1/build/Debug/outDebug"
+    }
+  ]
+}
