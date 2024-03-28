@@ -8,28 +8,28 @@ int solution(int fence[], int start, int end) {
 
     int shortest = 100000001, cnt = 0;
 
-    for (int i = start; i <= end; i++)
+    for (int i = start; i < end; i++)
         shortest = min(shortest, fence[i]);
 
-    for (int i = start; i <= end; i++)
+    for (int i = start; i < end; i++)
         fence[i] -= shortest;
     
     cnt += shortest;
 
-    for (int i = start; i <= end;) {
+    for (int i = start; i < end;) {
         if (fence[i] == 0) {
             i++;
         } else {
             int sub_start = i;
             int sub_end = sub_start;
-            while (sub_end <= end && fence[sub_end] > 0)
+            while (sub_end < end && fence[sub_end] > 0)
                 sub_end++;
-            cnt += solution(fence, sub_start, sub_end - 1);
+            cnt += solution(fence, sub_start, sub_end);
             i = sub_end;
         }
     }
 
-    return min(end - start + 1, cnt);
+    return min(end - start, cnt);
 }
 
 int main() {
@@ -41,7 +41,7 @@ int main() {
         cin >> fence[i];
     }
 
-    cout << solution(fence, 0, n - 1) << endl;
+    cout << solution(fence, 0, n) << endl;
 
     return 0;
 }
